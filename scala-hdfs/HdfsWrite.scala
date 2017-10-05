@@ -11,6 +11,7 @@ def main(args : Array[String]) {
 println( "Trying to write to HDFS..." )
 val conf = new Configuration()
 val avroStr = "Avro String here"
+// set this property fs.defaultFS, according to your env
 conf.set("fs.defaultFS", "hdfs://localhost:9000")
 conf.set("fs.hdfs.impl", classOf[org.apache.hadoop.hdfs.DistributedFileSystem].getName);
 conf.set("fs.file.impl", classOf[org.apache.hadoop.fs.LocalFileSystem].getName);
